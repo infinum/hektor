@@ -1,0 +1,33 @@
+{
+  "name": "hektor",
+  "description": "Helpfull Esoteric Kind Tool Or Resource",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/infinum/hektor.git"
+  },
+  "keywords": [
+    "wrecking",
+    "ball"
+  ],
+  "author": "Infinum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/infinum/hektor/issues"
+  },
+  "homepage": "https://github.com/infinum/hektor",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "lodash": "^3.8.0",
+    "merge-defaults": "^0.2.1"
+  },
+  "dependencies": {
+    "grunt-open": "^0.2.3",
+    "load-grunt-tasks": "^3.1.0",
+    "time-grunt": "^1.2.0"
+  }
+}
