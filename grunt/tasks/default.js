@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-  return function() {
+  grunt.registerTask('default', 'Test task', function() {
     grunt.log.write('Hektor is alive!');
-  };
+  });
 };

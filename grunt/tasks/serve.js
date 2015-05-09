@@ -1,7 +1,11 @@
 module.exports = function(grunt) {
-  return function(target) {
+  grunt.registerTask('serve', 'Serve the app', function(target) {
     if (target === 'dist') {
-      return grunt.task.run(['build', 'open:server', 'connect:dist:keepalive']);
+      return grunt.task.run([
+        'build',
+        'open:server',
+        'connect:dist:keepalive'
+      ]);
     }
 
     if (target === 'test') {
@@ -26,5 +30,5 @@ module.exports = function(grunt) {
       'connect:livereload',
       'watch'
     ]);
-  };
+  });
 };
