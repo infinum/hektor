@@ -6,6 +6,7 @@ module.exports = function(taskName, originalTask, cb) {
   // Set the defaults
   var taskOptions = _.extend({
     name: taskName, // Name of the task in the package
+    taskFile: taskName, // Name of the task file
     packageName: 'grunt-' + taskName, // task package name
     path: 'tasks' // path to the task inside of the package
   }, originalTask || {});
@@ -21,7 +22,7 @@ module.exports = function(taskName, originalTask, cb) {
     process.chdir(packageCWD);
 
     // Initialize the task
-    require(taskOptions.packageName + '/' + taskOptions.path + '/' + taskOptions.name)(grunt);
+    require(taskOptions.packageName + '/' + taskOptions.path + '/' + taskOptions.taskFile)(grunt);
 
     // Restore the current working directory
     process.chdir(originalCWD);
