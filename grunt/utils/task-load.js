@@ -21,7 +21,7 @@ module.exports = function(taskName, originalTask, cb) {
     process.chdir(packageCWD);
 
     // Initialize the task
-    require(taskOptions.packageName + '/' + taskOptions.path + '/' + taskOptions.name).call(this, grunt);
+    require(taskOptions.packageName + '/' + taskOptions.path + '/' + taskOptions.name)(grunt);
 
     // Restore the current working directory
     process.chdir(originalCWD);
