@@ -29,7 +29,9 @@ module.exports = function(taskName, originalTask, cb) {
     if (!grunt.config.get(taskName)) {
       try {
         var config = require('../config/' + taskName);
-        grunt.config.set(taskName, config);
+
+        // Config can be a function that can receive some arguments. Those arguments must be optional.
+        grunt.config.set(taskName, typeof config === 'function' ? config() : config);
       } catch(e) {}
     }
 
