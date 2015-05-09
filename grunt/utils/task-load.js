@@ -16,7 +16,8 @@ module.exports = function(taskName, originalTask, cb) {
     var originalCWD = process.cwd();
 
     // Set the target package as current working directory
-    var packageCWD = path.normalize(__dirname + '../../../node_modules/' + taskOptions.packageName);
+    var hektorModulesPath = __dirname + '../../../node_modules/';
+    var packageCWD = path.normalize(hektorModulesPath + taskOptions.packageName);
     process.chdir(packageCWD);
 
     // Initialize the task
