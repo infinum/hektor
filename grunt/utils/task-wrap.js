@@ -15,18 +15,18 @@ module.exports = function(taskName, originalTask, transformer) {
       // Rename the loaded task
       grunt.task.renameTask(taskOptions.name, wrappedTaskName);
 
+      // Transform the options
+      grunt.config.set(wrappedTaskName, transformer(grunt.config.get(taskName)));
+
       // Register our wrapper task
       var description = grunt.task._tasks[wrappedTaskName].info;
       grunt.registerTask(taskName, description, function(target) {
-
-        // Transform the options
-        grunt.config.set(wrappedTaskName, transformer(grunt.config.get(taskName)));
 
         // Call the wrapped task
         var taskCall = target ? (wrappedTaskName + ':' + target) : wrappedTaskName;
         grunt.task.run(taskCall);
       });
-      
+
     })(grunt);
   };
 };

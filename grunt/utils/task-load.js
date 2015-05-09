@@ -25,6 +25,14 @@ module.exports = function(taskName, originalTask, cb) {
     // Restore the current working directory
     process.chdir(originalCWD);
 
+    // Set the default config if we didn't set any and the default is defined
+    if (!grunt.config.get(taskName)) {
+      try {
+        var config = require('../config/' + taskName);
+        grunt.config.set(taskName, config);
+      } catch(e) {}
+    }
+
     // Call the callback (e.g. if this is used from task-wrap)
     if (cb) {
       cb(taskOptions);
