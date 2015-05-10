@@ -5,6 +5,12 @@ var hbsfy = require('hbsfy');
 module.exports = function(gulp, H, options) {
   options = options || false;
 
+  var nodePath = ['./' + H.paths.app + '/scripts'];
+  if (process.env.NODE_PATH) {
+    var paths = process.env.NODE_PATH.split(':');
+    nodePath = paths.concat(nodePath);
+  }
+
   gulp.task('browserify', function() {
     return gulp.src(options.src || H.paths.app + '/scripts/main.js')
       .pipe(H.deps.plumber({
@@ -28,7 +34,7 @@ module.exports = function(gulp, H, options) {
           }
         ],
         options: {
-          paths: options.nodePath || process.env.NODE_PATH,
+          paths: options.nodePath || nodePath,
           debug: !!options.debug
         }
       }))
