@@ -8,11 +8,15 @@ module.exports = function(gulp, H, options) {
     'app/scripts/{,**/}*.{js,hbs}': ['browserify']
   };
 
-  var deps = _(watch).values().flatten().push('connect').value();
+  // Get all tasks that are called, and run them before the server is started
+  // Is it safe to do compact here?
+  var deps = _(watch).values().flatten().compact().value();
 
-  gulp.task('serve', deps, function() {
-    _.each(watch, function(tasks, path) {
-      gulp.watch(path, tasks);
+  gulp.task('serve', function() {
+    H.run(deps, options.server || 'connect', function() {
+      _.each(watch, function(tasks, path) {
+        gulp.watch(path, tasks);
+      });
     });
   });
 };
