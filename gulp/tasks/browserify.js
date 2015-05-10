@@ -13,8 +13,8 @@ module.exports = function(gulp, H, options) {
       .pipe(H.deps.browserify2({
         fileName: options.main || 'main.js',
         transform: [
-          babelify.configure(options.babelConfig || {
-            stage: 1
+          babelify.configure(options.babelify || {
+            stage: 2
           }),
           {
             tr: aliasify,
