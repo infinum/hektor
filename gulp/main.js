@@ -7,7 +7,8 @@ var H = {
   // We need to set the package.json path manually or it will take the project package, and we don't want that
   config: path.normalize(__dirname + '../../package.json')
   }),
-  tasks: {}
+  tasks: {},
+  run: require('run-sequence')
 };
 
 module.exports = function(gulp) {
@@ -25,7 +26,7 @@ module.exports = function(gulp) {
     _.each(modules, function(options, module) {
 
       // sass task is also documented
-      H.tasks[module] = require('./tasks/' + module)(gulp, H.deps, options);
+      H.tasks[module] = require('./tasks/' + module)(gulp, H, options);
     });
     return H;
   }

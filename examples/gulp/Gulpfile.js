@@ -1,6 +1,9 @@
 var gulp = require('gulp');
 
-// H is an object with two properties: deps (HEKTOR's gulp deps) and tasks (loaded HEKTOR tasks)
+// H is an object with three properties:
+// * deps (HEKTOR's gulp deps)
+// * tasks (loaded HEKTOR tasks)
+// * run - https://www.npmjs.com/package/run-sequence
 var H = require('hektor/gulp')(gulp).load({
   sass: {
     browsers: ['chrome 40', 'ios 7']
@@ -11,7 +14,8 @@ var H = require('hektor/gulp')(gulp).load({
         underscore: 'lodash'
       }
     }
-  }
+  },
+  serve: {}
 });
 
 // Load receives a task name, array of task names or object with taskName: taskOptions

@@ -13,18 +13,19 @@ module.exports = function(gulp, H, options) {
     // * call the callback function (the only argument in the task function)
     //   callback should get (null|undefined) as only argument if all OK, or an error object
     return gulp.src(options.src || 'app/styles/main.scss')
-      .pipe(H.plumber({
-        errorHandler: H.notify.onError('Sass: <%= error.message %>')
+      .pipe(H.deps.plumber({
+        errorHandler: H.deps.notify.onError('Sass: <%= error.message %>')
       }))
-      .pipe(H.sourcemaps.init())
-      .pipe(H.sass({
+      .pipe(H.deps.sourcemaps.init())
+      .pipe(H.deps.sass({
         includePaths: options.includePaths || 'app/bower_components'
       }))
-      .pipe(H.autoprefixer({
+      .pipe(H.deps.autoprefixer({
           browsers: options.browsers || ['last 2 versions', 'ie 10'],
           cascade: false
       }))
-      .pipe(H.sourcemaps.write())
-      .pipe(gulp.dest(options.dest || '.tmp/styles'));
+      .pipe(H.deps.sourcemaps.write())
+      .pipe(gulp.dest(options.dest || '.tmp/styles'))
+      .pipe(H.deps.connect.reload());
   });
 };

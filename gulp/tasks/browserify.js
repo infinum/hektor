@@ -7,10 +7,10 @@ module.exports = function(gulp, H, options) {
 
   gulp.task('browserify', function() {
     return gulp.src(options.src || 'app/scripts/main.js')
-      .pipe(H.plumber({
-        errorHandler: H.notify.onError('Browserify: <%= error.message %>')
+      .pipe(H.deps.plumber({
+        errorHandler: H.deps.notify.onError('Browserify: <%= error.message %>')
       }))
-      .pipe(H.browserify2({
+      .pipe(H.deps.browserify2({
         fileName: options.main || 'main.js',
         transform: [
           babelify.configure(options.babelConfig || {
@@ -32,6 +32,7 @@ module.exports = function(gulp, H, options) {
           debug: !!options.debug
         }
       }))
-      .pipe(gulp.dest(options.dest || '.tmp/scripts'));
+      .pipe(gulp.dest(options.dest || '.tmp/scripts'))
+      .pipe(H.deps.connect.reload());
   });
 };

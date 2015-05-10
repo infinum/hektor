@@ -23,3 +23,5 @@ Go to examples folder and see how to use hektor
 
 * sass (does sass + autoprefixer)
 * browserify (with babelify, aliasify and hbsfy)
+* connect (with livereload)
+* serve (with watch)
