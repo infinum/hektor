@@ -20,7 +20,12 @@ module.exports = function(gulp, H, options) {
             tr: aliasify,
             options: options.aliasify || {}
           },
-          hbsfy
+          {
+            tr: hbsfy,
+            options: {
+              compiler: 'require("hektor/node_modules/hbsfy/runtime")'
+            }
+          }
         ],
         options: {
           paths: options.nodePath || process.env.NODE_PATH,

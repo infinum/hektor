@@ -40,9 +40,7 @@
     "gulp-sourcemaps": "^1.5.2",
     "handlebars": "^3.0.3",
     "hbsfy": "^2.2.1",
-    "lodash": "^3.8.0",
-    "merge-defaults": "^0.2.1",
-    "time-grunt": "^1.2.0"
+    "lodash": "^3.8.0"
   },
   "peerDependencies": {
     "grunt": "^0.4.5"
