@@ -2,10 +2,13 @@ var path = require('path');
 var _ = require('lodash');
 
 // Load the HEKTOR gulp dependencies
-var H = require('gulp-load-plugins')({
+var H = {
+  deps: require('gulp-load-plugins')({
   // We need to set the package.json path manually or it will take the project package, and we don't want that
   config: path.normalize(__dirname + '../../package.json')
-});
+  }),
+  tasks: {}
+};
 
 module.exports = function(gulp) {
 
@@ -20,13 +23,9 @@ module.exports = function(gulp) {
     }
 
     _.each(modules, function(options, module) {
-      if (H[module]) {
-        // Make sure we don't overwrite a dependency task
-        H['_hektor_' + module] = H[module];
-      }
 
       // sass task is also documented
-      H[module] = require('./tasks/' + module)(gulp, H, options);
+      H.tasks[module] = require('./tasks/' + module)(gulp, H.deps, options);
     });
     return H;
   }

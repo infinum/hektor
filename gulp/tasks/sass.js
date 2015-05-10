@@ -1,4 +1,6 @@
 module.exports = function(gulp, H, options) {
+
+  // Options should always be optional
   options = options || false;
 
   // Create a standard gulp task

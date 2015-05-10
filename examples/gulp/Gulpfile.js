@@ -1,9 +1,16 @@
 var gulp = require('gulp');
 
-// H contains all the loaded tasks (including all the hektor gulp dependencies)
+// H is an object with two properties: deps (HEKTOR's gulp deps) and tasks (loaded HEKTOR tasks)
 var H = require('hektor/gulp')(gulp).load({
   sass: {
     browsers: ['chrome 40', 'ios 7']
+  },
+  browserify: {
+    aliasify: {
+      aliases: {
+        underscore: 'lodash'
+      }
+    }
   }
 });
 

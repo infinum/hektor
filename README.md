@@ -18,3 +18,8 @@ Go to examples folder and see how to use hektor
 * sass
 * scsslint
 * watch
+
+## Available gulp tasks
+
+* sass (does sass + autoprefixer)
+* browserify (with babelify, aliasify and hbsfy)
