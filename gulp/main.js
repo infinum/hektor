@@ -1,7 +1,7 @@
 var path = require('path');
 var _ = require('lodash');
 
-module.exports = function(gulp) {
+module.exports = function(gulp, paths) {
 
   // Load the HEKTOR gulp dependencies
   var H = {
@@ -10,7 +10,11 @@ module.exports = function(gulp) {
     config: path.normalize(__dirname + '../../package.json')
     }),
     tasks: {},
-    run: require('run-sequence').use(gulp)
+    run: require('run-sequence').use(gulp),
+    paths: paths || {
+      app: 'app',
+      dist: 'dist'
+    }
   };
 
   function loadModules(modules) {

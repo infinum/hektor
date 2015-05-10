@@ -6,7 +6,7 @@ module.exports = function(gulp, H, options) {
   options = options || false;
 
   gulp.task('browserify', function() {
-    return gulp.src(options.src || 'app/scripts/main.js')
+    return gulp.src(options.src || H.paths.app + '/scripts/main.js')
       .pipe(H.deps.plumber({
         errorHandler: H.deps.notify.onError('Browserify: <%= error.message %>')
       }))

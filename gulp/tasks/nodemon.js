@@ -8,7 +8,8 @@ module.exports = function(gulp, H, options) {
         ext: 'js',
         ignore: [
           '.tmp/**',
-          'app/*',
+          H.paths.app + '/*',
+          H.paths.dist + '/*',
           'node_modules/*'
         ]
       });

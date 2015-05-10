@@ -1,12 +1,13 @@
 var _ = require('lodash');
 
+var defaultWatch = {};
+defaultWatch[H.paths.app + '/styles/{,**/}*.scss'] = ['sass'];
+defaultWatch[H.paths.app + '/scripts/{,**/}*.{js,hbs}'] = ['browserify'];
+
 module.exports = function(gulp, H, options) {
   options = options || false;
 
-  var watch = options.watch || {
-    'app/styles/{,**/}*.scss': ['sass'],
-    'app/scripts/{,**/}*.{js,hbs}': ['browserify']
-  };
+  var watch = options.watch || defaultWatch;
 
   // Get all tasks that are called, and run them before the server is started
   // Is it safe to do compact here?
