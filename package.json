@@ -28,6 +28,13 @@
     "grunt-rev": "^0.1.0",
     "grunt-sass": "^1.0.0",
     "grunt-scss-lint": "^0.3.6",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.2.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-sass": "^2.0.0",
+    "gulp-sourcemaps": "^1.5.2",
     "lodash": "^3.8.0",
     "merge-defaults": "^0.2.1",
     "time-grunt": "^1.2.0"

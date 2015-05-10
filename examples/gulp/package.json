@@ -1,15 +1,15 @@
 {
-  "name": "grunt-test",
+  "name": "gulp-test",
   "version": "1.0.0",
   "description": "",
-  "main": "Gruntfile.js",
+  "main": "Gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "grunt": "^0.4.5",
+    "gulp": "^3.8.11",
     "hektor": "git://github.com/infinum/hektor",
   }
 }
