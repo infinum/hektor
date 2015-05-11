@@ -1,5 +1,9 @@
 .cache
 .tmp
+.sass-cache
 .DS_Store
 dist
 node_modules
+npm-debug.log
+reports
+generated
