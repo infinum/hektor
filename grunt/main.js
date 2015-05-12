@@ -5,6 +5,7 @@ module.exports = function(grunt) {
   return {
     loadAll: function() {
       grunt.loadTasks(__dirname + '/tasks');
+      grunt.loadTasks(__dirname + '/tasks');
     },
     load: function(modules) {
       modules = [].concat(modules);
@@ -12,5 +13,5 @@ module.exports = function(grunt) {
         require('./tasks/' + module)(grunt);
       });
     }
-  }
+  };
 };

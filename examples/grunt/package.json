@@ -10,6 +10,6 @@
   "license": "ISC",
   "devDependencies": {
     "grunt": "^0.4.5",
-    "hektor": "git://github.com/infinum/hektor",
+    "hektor": "git://github.com/infinum/hektor"
   }
 }
