@@ -24,16 +24,16 @@ Go to examples folder and see how to use hektor
 * connect
 * clean
 * stylecheck
-** jshint
-** jscs
+  * jshint
+  * jscs
 * browserify
 * requirejs
 * min
-** useminPrepare
-** usemin
-** imagemin
-** cssmin
-** htmlmin
+  * useminPrepare
+  * usemin
+  * imagemin
+  * cssmin
+  * htmlmin
 * wiredep?
 * bower
 * copy
@@ -54,14 +54,14 @@ Go to examples folder and see how to use hektor
 # TODO
 
 * stylecheck
-** jshint
-** jscs
+  * jshint
+  * jscs
 * min
-** useminPrepare
-** usemin
-** imagemin
-** cssmin
-** htmlmin
+  * useminPrepare
+  * usemin
+  * imagemin
+  * cssmin
+  * htmlmin
 * debowerify?
 * copy
 * zip
@@ -74,12 +74,12 @@ Go to examples folder and see how to use hektor
 ## Available SCSS helpers
 
 * mixins
-** stretch
-** center
+  * stretch
+  * center
 * breakpoints
-** bootstrap
-*** desktop-first
-*** mobile-first
+  * bootstrap
+    * desktop-first
+    * mobile-first
 
 ### TODO
 
